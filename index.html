@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Website game balap mobil 2D berbasis HTML, CSS, dan JavaScript yang siap deploy." />
+  <title>Turbo Lane | Game Balap Mobil</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="game-card">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">2D Racing Game</p>
+          <h1>Turbo Lane</h1>
+          <p class="subtitle">Hindari mobil lawan, kumpulkan koin, dan bertahan selama mungkin.</p>
+        </div>
+        <button id="themeBtn" class="icon-btn" aria-label="Ganti tema">🌙</button>
+      </header>
+
+      <section class="stats" aria-label="Statistik permainan">
+        <div>
+          <span>Score</span>
+          <strong id="score">0</strong>
+        </div>
+        <div>
+          <span>High Score</span>
+          <strong id="highScore">0</strong>
+        </div>
+        <div>
+          <span>Speed</span>
+          <strong id="speedText">1x</strong>
+        </div>
+        <div>
+          <span>Coins</span>
+          <strong id="coins">0</strong>
+        </div>
+      </section>
+
+      <section class="canvas-wrap">
+        <canvas id="gameCanvas" width="420" height="680" aria-label="Area game balap mobil"></canvas>
+
+        <div id="overlay" class="overlay">
+          <div class="overlay-box">
+            <h2 id="overlayTitle">Turbo Lane</h2>
+            <p id="overlayText">
+              Pilih mode, lalu mulai balapan. Hindari tabrakan dan ambil koin emas untuk bonus skor.
+            </p>
+
+            <div class="difficulty">
+              <button class="difficulty-btn active" data-mode="easy">Easy</button>
+              <button class="difficulty-btn" data-mode="normal">Normal</button>
+              <button class="difficulty-btn" data-mode="hard">Hard</button>
+            </div>
+
+            <button id="startBtn" class="primary-btn">Mulai Balapan</button>
+            <p class="hint">Keyboard: ← → / A D · Boost: ↑ / W · Rem: ↓ / S · Pause: Space</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mobile-controls" aria-label="Kontrol mobile">
+        <button class="control-btn" id="leftBtn" aria-label="Belok kiri">←</button>
+        <button class="control-btn boost" id="boostBtn" aria-label="Boost">BOOST</button>
+        <button class="control-btn" id="rightBtn" aria-label="Belok kanan">→</button>
+      </section>
+
+      <section class="actions">
+        <button id="pauseBtn" class="secondary-btn">Pause</button>
+        <button id="restartBtn" class="secondary-btn">Restart</button>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
